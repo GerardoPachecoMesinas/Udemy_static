@@ -1,2 +1,20 @@
-<h1><strong>CONTACTO</strong></h1>
+<%# este documento como entiende código HTML y ERB por lo que podemos hacer la maquetación en html y al mismo tiempo
+podemos realizar ciclos, condicionales, arrays, hashes y todo lo necesario con ruby%>
+
+<% provide(:titulo, "Contact") %> <%# el método provide le da a la view donde es utilizado, mediante dos paramtros el primero indica la clave y el segundo
+el valor asignado... de esta forma podemos utilizar el método yield(:titulo) en el layout general y poder asignarle nombres distintos a cada pestaña%>
+
+<h1><strong>CONTACTO</strong></h1> <%# comenzamos con algunas etiquetas html de manera normal%>
 <p>Find me in app/views/statics/contact.html.erb</p>
+
+<%= "el controller dice #{@message}"%> <%# al nesecitar acceder a las variables de instancia utilizamos ERB%>
+<br>
+<br>
+<p>los usuarios son</p> <%# aqui solo es un texto sin necesidad de ningún valor adicional solo es necesario html %>
+<ul>
+  <% @users.each do |i|%> <%# con ruby embebido iniciamos un iterador each para recorrer la variable @users%>
+    <%= "<li> #{i} </li>".html_safe %> <%# html_safe le indica a ERB que interprete como codigo html y no como string%>
+  <%end%>
+</ul>
+<br>
+<%= params.inspect %> <%# este comando devuelve un hash con los valores que contiene un link %>

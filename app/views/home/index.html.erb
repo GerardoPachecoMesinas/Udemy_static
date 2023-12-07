@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <center> <h1><strong>Página Home</strong></h1></center>
-  <center><p><strong>Este es el primer párrafo del index</strong></p></center>
-</body>
-</html>
+<% provide(:titulo, "Home") %> <%# el método provide le da a la view donde es utilizado, mediante dos paramtros el primero indica la clave y el segundo
+el valor asignado... de esta forma podemos utilizar el método yield(:titulo) en el layout general y poder asignarle nombres distintos a cada pestaña%>
 
+<h1><strong>HOME</strong></h1>
+<p>Este es el primer parrafo del home</p>

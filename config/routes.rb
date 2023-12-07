@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'statics/contact'
   get 'statics/about_us'
+
+  get 'statics/privacy' #este es el tercer paso para la creacion de una nueva view y consta de crear la ruta hacia dicha vista en este archivo
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
