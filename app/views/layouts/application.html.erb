@@ -9,12 +9,31 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <style>
+    #footer {
+    background: linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372);
+    padding-bottom: 30px;
+    padding-top: 30px
+    }
+    #yield {
+      background: linear-gradient(90deg,#9EB8D9,#9EB8D9 25%,#9EB8D9);
+      height: 715px;
+    }
+    </style>
+    
   </head>
 
   <body>
-    <%= render "shared/header"%> <%# este método se compone de la palabra reservada render y posteriormente la ubicacion del documento a renderizar
-    que en este caso es el header que compartirán todas las páginas y que contiene los links al resto de las páginas%>
-    
-    <%= yield %>
+
+    <div id="yield" class="container-fluid">
+          <%= yield %>
+    </div>
+
+    <div class="container-fluid">
+      <%= render "shared/footer" %> <%# este método se compone de la palabra reservada render y posteriormente la ubicacion del documento a renderizar que en este caso es el header que compartirán todas las páginas y que contiene los links al resto de las páginas%>
+    </div>
+
   </body>
+  
 </html>

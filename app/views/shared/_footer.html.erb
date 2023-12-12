@@ -1,0 +1,20 @@
+<%# este es un documento "PARCIAL" lo que significa que puede ser insertado en otro documento mediante el método "render" 
+  por convencion los documentos parciales deben ser nombrados con un guión bajo al inicio%>
+
+<div id="footer" class="row">
+  <div class="col-3">
+   <a><%= link_to "Home",  root_path %> </a>
+  </div>
+  <div class="col-3">
+    <%= link_to "Contact", contacto_path %>
+  </div>
+  <div class="col-3">
+    <%= link_to "About_us", statics_about_us_path(id: 1, pag: 2),
+    class: "active",
+     tarjet: "_tarjet_name"
+    %>
+  </div>
+  <div class="col-3">
+    <%= link_to "Privacy", statics_privacy_path %>
+  </div>
+</div>

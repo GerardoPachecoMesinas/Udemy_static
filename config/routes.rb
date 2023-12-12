@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  get 'articulos/new'
+  get 'articulos/index'
+
   get 'home/index'
   root "home#index"
 
-  get 'statics/contact'
+  get 'contacto', to: 'statics#contact'
   get 'statics/about_us'
 
   get 'statics/privacy' #este es el tercer paso para la creacion de una nueva view y consta de crear la ruta hacia dicha vista en este archivo
+  
+  get 'suma', to: 'statics#sum_form'
+  post 'statics/sum'
+  get 'resultado', to: 'statics#result_form'
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

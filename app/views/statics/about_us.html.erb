@@ -4,10 +4,12 @@ el valor asignado... de esta forma podemos utilizar el método yield(:titulo) en
 <h1><strong>ACERCA DE NOSOTROS</strong></h1>
 <p>Find me in app/views/statics/about_us.html.erb</p>
 
+<p>
 <%= 5.times do |x|%>
   <%= x %>
 <%end%>
+</p>
+<p><%= params.inspect %> <%# este método devuelve un hash con los valores que contiene un link %></p>
 
-<%= params.inspect %> <%# este método devuelve un hash con los valores que contiene un link %>
 <p> ID: <%= @id%></p>   <%# de esta manera estamos accediendo a las variables de entorno declaradas en el controller en donde se guardaron%>
 <p> pág: <%= @page%></p> <%# los valores del link mediante el método params%>

@@ -13,4 +13,19 @@ class StaticsController < ApplicationController
   def privacy # para agrgar nuevas vistas el primer paso sería agregar el método(accion), posteriormente crear el archivo del mismo nombre en views
   end # y por ultimo crear la ruta modificando el archivo routes
 
+  def sum_form
+  end
+
+  def sum
+    addend1 = params[:addend1]
+    addend2 = params[:addend2]
+
+    result = addend1.to_i + addend2.to_i
+
+    redirect_to resultado_path(resultado: result)
+  end
+
+  def result_form
+    @total = params[:resultado]
+  end
 end
