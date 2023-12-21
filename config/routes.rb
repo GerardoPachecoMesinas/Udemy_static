@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'articulos/new'
-  get 'articulos/index'
+  # get 'articulos/new'
+  # get 'articulos/index'
+  resources :articulos
 
   get 'home/index'
   root "home#index"
 
   get 'contacto', to: 'statics#contact'
-  get 'statics/about_us'
-
+  get 'nosotros', to: 'statics#about_us'
   get 'statics/privacy' #este es el tercer paso para la creacion de una nueva view y consta de crear la ruta hacia dicha vista en este archivo
   
   get 'suma', to: 'statics#sum_form'
