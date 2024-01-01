@@ -3,18 +3,18 @@
 
 <div id="footer" class="row">
   <div class="col-3">
-   <a><%= link_to "Home",  root_path %> </a>
+   <a><%= link_to "Principal",  root_path %> </a>
   </div>
   <div class="col-3">
-    <%= link_to "Contact", contacto_path %>
+    <%= link_to "Contacto", contacto_path %>
   </div>
   <div class="col-3">
-    <%= link_to "About_us", nosotros_path(id: 1, pag: 2),
+    <%= link_to "Nosotros", nosotros_path(id: 1, pag: 2),
     class: "active",
-     tarjet: "_tarjet_name"
+    target: "_blank"
     %>
   </div>
   <div class="col-3">
-    <%= link_to "Privacy", statics_privacy_path %>
+    <%= link_to "Privacidad", statics_privacy_path %>
   </div>
 </div>
