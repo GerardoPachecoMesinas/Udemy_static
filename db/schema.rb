@@ -14,11 +14,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_21_162957) do
   create_table "articulos", force: :cascade do |t|
     t.string "titulo"
     t.text "contenido"
-    t.integer "autor_id", null: false
+    #t.integer "autor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["autor_id"], name: "index_articulos_on_autor_id"
+    #t.index ["autor_id"], name: "index_articulos_on_autor_id"
   end
 
-  add_foreign_key "articulos", "autors"
+  # add_foreign_key "articulos", "autors"
 end

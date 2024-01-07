@@ -1,2 +1,23 @@
-<h1>Articulos#show</h1>
-<p>Find me in app/views/articulos/show.html.erb</p>
+<div class="row justify-content-center">
+  <div class="col-8 text-center">
+<%# aqui estamos accediendo a cada uno de los metodos de la variable de instancia, que a su vez son las columnas o atributos, de cada entidad o tabla de la base de datos %>
+    <h1> <%= @articulo.titulo %> </h1> 
+    <p> <%=@articulo.created_at.strftime("%d-%m-%y") %></p> <%# .strftime() es un metodo de ruby para darle formato a las fechas  %>
+    <p> <%= @articulo.contenido %> </p> 
+
+  </div>
+</div>
+
+<div class="row justify-content-center pt-5">
+
+  <div class="col-4 offset-sm-1">
+    <%= link_to "índice de articulos", articulos_path %>
+  </div>
+  <div class="col-3 offset-sm-4">
+    <%= link_to "editar Articulo", edit_articulo_path %>
+  </div>
+    <div class="col-3 offset-sm-4">
+    <%= link_to "eliminar Articulo", @articulo, :method => :delete, data: {confirm: "seguro que quieres eliminar el articulo?"} %>
+  </div>
+</div>
+
