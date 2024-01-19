@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :comments
+
   # get 'autores/index'
   # get 'autores/new'
   resources :autores, as: :autores, only: :index
