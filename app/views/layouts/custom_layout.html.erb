@@ -25,13 +25,13 @@
 
   <body>
     <div id="yield" class="container-fluid pb-2">
-    <h2> <strong>Esta página estan usando el layout: custom </strong> </h2>
-    <%= yield %>
+      <h2> <strong>Esta página estan usando el layout: custom </strong> </h2>
+      <%= yield %>
     </div>
 
     <div class="container-fluid">
-    <%= render "shared/footer"%> <%# este método se compone de la palabra reservada render y posteriormente la ubicacion del documento a renderizar
-    que en este caso es el header que compartirán todas las páginas y que contiene los links al resto de las páginas%>
+      <%= render "shared/footer"%> <%# este método se compone de la palabra reservada render y posteriormente la ubicacion del documento a renderizar
+      que en este caso es el header que compartirán todas las páginas y que contiene los links al resto de las páginas%>
     </div>
 
   </body>

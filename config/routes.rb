@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # get 'autores/index'
+  # get 'autores/new'
+  resources :autores, as: :autores, only: :index
+  resources :autores, as: :autor
+
   # get 'articulos/new'
   # get 'articulos/index'
   resources :articulos

@@ -6,13 +6,13 @@
 
 <div class="row pt-5">
   <div class="col">
-        <% @articulos.each do |articulo| %>
-    <h2><%= link_to articulo.titulo, articulo %></h2>
-    <p><%= articulo.created_at.strftime("%d-%m-%y") %></p>
-    <p><%= articulo.contenido.truncate_words(30) %></p>
+    <% @articulos.each do |articulo| %>
+      <h2><%= link_to articulo.titulo, articulo %></h2>
+      <p><%= articulo.created_at.strftime("%d-%m-%y") %></p>
+      <p><%= articulo.contenido.truncate_words(30) %></p>
     <% end %>
   </div>
-</div>
+</div>          
 
 <div class="row pt-5">
   <div class="col">

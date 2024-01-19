@@ -8,16 +8,19 @@
   </div>
 </div>
 
-<div class="row justify-content-center pt-5">
+<div class="row justify-content-center text-center pt-5">
 
-  <div class="col-4 offset-sm-1">
+  <div class="col">
     <%= link_to "índice de articulos", articulos_path %>
   </div>
-  <div class="col-3 offset-sm-4">
+  <div class="col">
     <%= link_to "editar Articulo", edit_articulo_path %>
   </div>
-    <div class="col-3 offset-sm-4">
+  <div class="col">
     <%= link_to "eliminar Articulo", @articulo, :method => :delete, data: {confirm: "seguro que quieres eliminar el articulo?"} %>
   </div>
+
+
+
 </div>
 

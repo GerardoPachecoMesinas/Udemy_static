@@ -1,0 +1,29 @@
+<%# creamos el formulario en parcial para poder utilizarlo en la vista new y edit sin repetirlo %>
+
+<%= form_for @autor do |form| %> <%# este es el helper para la creacion de formularios en ruby %>
+  <% if @autor.errors.any? %>  <%#  insertamos un condicional que imprimirá cualquier tipo de error que se genere%>
+    <div style="color: red">
+      <h2> Se han producido los siguientes errores: </h2>
+      <ul>
+        <% @autor.errors.each do |error| %> <%#  aqui iteramos e imprimimos el array de errores que se genera%>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :name %> <br>  <%# form. esta definido en el inicio del formulario y hace referencia el formulario mismo %>
+  <%= form.text_field :name %> <br> <%# de esta forma relacionamos cada elemento con el formulario %>
+
+  <%= form.label :last_name %> <br>
+  <%= form.text_area :last_name %> <br>
+
+  <%= form.label :age %> <br>
+  <%= form.text_field :age %> <br>
+
+  <%= form.label :nationality %> <br>
+  <%= form.text_field :nationality %> <br>
+
+  <%= form.submit yield(:button)%>
+
+<% end %>

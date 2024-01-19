@@ -1,5 +1,5 @@
 class Articulo < ApplicationRecord
-  #belongs_to :autor # esta asociación define la relación y dependencia con el módelo autor
+  belongs_to :autor # esta asociación define la relación y dependencia con el módelo autor
 
   # la siguientes son validaciones que definen reglas para la cración de de cada articulo
   validates :titulo, presence: {:message => "no puede estar vacío"} #en el momento en en el que existe un mensaje nu es necesario utilizar true ya que esta implicito

@@ -43,7 +43,7 @@ class ArticulosController < ApplicationController
   private
 
   def articulo_params # aqui estamos definiendo que atributos contendrá el metodo articulo_params para la creacion de nuevas 
-    params.require(:articulo).permit(:titulo, :contenido) # instancias de artículo y de esta forma poder tener parametros
+    params.require(:articulo).permit(:titulo, :contenido, :autor_id) # instancias de artículo y de esta forma poder tener parametros
   end # seguros.
 
 end

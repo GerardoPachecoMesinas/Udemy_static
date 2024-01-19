@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <div class="col-8 text-center">
+    <h1>Autores#index</h1>
+  </div>
+</div>
+
+<div class="row pt-5">
+  <div class="col">
+    <% @autores.each do |autor| %>
+      <h2><%= link_to autor.name, autor %></h2>
+      <p><%= autor.last_name %></p>
+      <p><%= autor.created_at.strftime("%d-%m-%y") %></p>
+      <p><%= autor.age %></p>
+      <p><%= autor.nationality %></p>
+    <% end %>
+  </div>
+</div>          
+
+<div class="row pt-5">
+  <div class="col">
+    <%= link_to "nuevo Autor", new_autor_path %>
+  </div>
+</div>
