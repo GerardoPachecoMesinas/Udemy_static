@@ -1,15 +1,17 @@
-<div class="row justify-content-center">
-  <div class="col-8 text-center">
-  <h1>Articulos#new</h1>
-  <p>Find me in app/views/articulos/new.html.erb</p>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <h1>Articulos#new</h1>
+      <p>Find me in app/views/articulos/new.html.erb</p>
 
-  <% provide(:button, "crear articulo") %>
-  <%= render "form" %>
-
+      <% provide(:button, "crear articulo") %>
+      <%= render "form" %>
+    </div>
   </div>
-</div>
-<div class="row pt-5">
-  <div class="col">
-    <%= link_to "índice de articulos", articulos_path %>
+
+  <div class="row pt-5">
+    <div class="col">
+      <%= link_to "índice de articulos", articulos_path %>
+    </div>
   </div>
 </div>

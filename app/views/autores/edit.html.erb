@@ -1,15 +1,17 @@
-<div class="row justify-content-center">
-  <div class="col-8 text-center">
-<h1>Autores#edit</h1>
-<p>Find me in app/views/autores/edit.html.erb</p>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+     <h1>Autores#edit</h1>
+      <p>Find me in app/views/autores/edit.html.erb</p>
 
-  <% provide(:button, "Modificar Autor") %>
-  <%= render "form" %>
-  
+      <% provide(:button, "Modificar Autor") %>
+     <%= render "form" %>
+    </div>
   </div>
-</div>
-<div class="row pt-5">
-  <div class="col">
-    <%= link_to "Índice de Autores", autores_path %>
+  
+  <div class="row pt-5">
+    <div class="col">
+      <%= link_to "Índice de Autores", autores_path %>
+    </div>
   </div>
 </div>

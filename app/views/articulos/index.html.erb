@@ -1,25 +1,23 @@
-<div class="row justify-content-center">
-  <div class="col-8 text-center">
-    <h1>Articulos#index</h1>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <h1>Articulos#index</h1>
+    </div>
+  </div>
+
+  <div class="row pt-5">
+    <div class="col">
+      <% @articulos.each do |articulo| %>
+        <h2><%= link_to articulo.titulo, articulo %></h2>
+        <p><%= articulo.created_at.strftime("%d-%m-%y") %></p>
+        <p><%= articulo.contenido.truncate_words(30) %></p>
+      <% end %>
+    </div>
+  </div>          
+
+  <div class="row pt-5">
+    <div class="col">
+      <%= link_to "nuevo articulo", new_articulo_path %>
+    </div>
   </div>
 </div>
-
-<div class="row pt-5">
-  <div class="col">
-    <% @articulos.each do |articulo| %>
-      <h2><%= link_to articulo.titulo, articulo %></h2>
-      <p><%= articulo.created_at.strftime("%d-%m-%y") %></p>
-      <p><%= articulo.contenido.truncate_words(30) %></p>
-    <% end %>
-  </div>
-</div>          
-
-<div class="row pt-5">
-  <div class="col">
-    <%= link_to "nuevo articulo", new_articulo_path %>
-  </div>
-</div>
-
-
-
-

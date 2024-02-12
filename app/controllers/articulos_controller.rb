@@ -1,11 +1,12 @@
 class ArticulosController < ApplicationController
+  before_action :set_articulo, only: %i[ show edit update destroy ] #esa linea de código sustituye el find necesario en los métodos declarados en los corchetes
+                                                                    # dicho método queda definido como private en la parte de abajo
   def index
     @articulos = Articulo.all.order("created_at DESC") # .order()modifica la query sql para mostrar los articulos
   end     # en forma decendente, de esta manera siempre mostrará hasta arriba los articulos mas recientes
 
   def show
-    @articulo = Articulo.find(params[:id]) # de esta forma recojemos el parametro id de la url para ingresarlo como 
-  end # parametro en de find y apuntar a el respectivo artículo
+  end 
 
   def new
     @articulo = Articulo.new
@@ -21,11 +22,9 @@ class ArticulosController < ApplicationController
   end
 
   def edit
-    @articulo = Articulo.find(params[:id])
   end
 
   def update
-    @articulo = Articulo.find(params[:id])
     if @articulo.update(articulo_params)
       flash[:notice] = "Artículo modificado correctamente"
       redirect_to @articulo
@@ -35,12 +34,18 @@ class ArticulosController < ApplicationController
   end
 
   def destroy
-    @articulo = Articulo.find(params[:id])
-    @articulo.destroy
-    redirect_to articulos_path, :notice => "Artículo eliminado correctamente"
+    @articulo.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to articulos_path, notice: "Artículo eliminado correctamente" }
+      format.json { head :no_content }
+    end
   end
 
-  private
+private
+  def set_articulo
+    @articulo = Articulo.find(params[:id])
+  end
 
   def articulo_params # aqui estamos definiendo que atributos contendrá el metodo articulo_params para la creacion de nuevas 
     params.require(:articulo).permit(:titulo, :contenido, :autor_id) # instancias de artículo y de esta forma poder tener parametros
