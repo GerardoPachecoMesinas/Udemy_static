@@ -25,6 +25,11 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100 text-secondary bg-dark">
+    <ul>
+      <% flash.each do |key, value| %>
+        <li><%= value %></li>
+        <% end %>
+    </ul>
 
       <%= yield %>
 
